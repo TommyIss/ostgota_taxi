@@ -1,1 +1,592 @@
 /* You can add global styles to this file, and also import other style files */
+/* Färger
+Backgrunds färg: #FFF0DC
+Primar färg: #543A14
+Orange: #F0BB78
+Vit: #FFFFFF
+Svart: #000000
+Länk-hover: #00AEFF
+*/
+
+/* Importera Google typsnitt */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+
+
+/* Body-element */
+body {
+    background-color: #FFF0DC;
+    margin: auto;
+    padding: 0;
+    max-width: 1512px;
+    border: solid 2px black;
+    line-height: 2.6em;
+    width: 100%;
+}
+
+/* Header-sektion */
+header {
+    margin-top: 0;
+    background-color: #543A14;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    /* padding: 0 1%; */
+}
+
+/* Logo */
+#logo {
+    color: var(--Vit, #FFF);
+    font-family: "Instrument Sans";
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 700;   
+    white-space: nowrap; 
+}
+
+/* Navigerinsmeny */
+#nav-menu {
+    margin: 0 4%;
+}
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.nav-list > li {
+    color: #FFF;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0 4%;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #00AEFF;
+    text-decoration: underline;
+}
+.actual-side {
+    color: #F0BB78;
+    text-decoration: underline;
+}
+
+/* Dölja meny knappar i desktopläge */
+.menu-btn {
+    display: none;
+}
+
+/* Main-sektion / Huvud innehållet */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#main-image {
+    width: 100%;
+}
+#side-header {
+    color: var(--Primar-frg, #543A14);
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 2.5em;
+    font-style: normal;
+    font-weight: 700;
+    margin: 2% 0;
+}
+/* Bread crumbs */
+.breadcrumbs {
+    list-style-type: none;
+    color: black;
+    padding: 0;
+    align-self: flex-start;
+    margin: 1% 10%;
+}
+
+.breadcrumbs-item {
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.breadcrumbs a {
+    color: black;
+}
+
+.breadcrumbs a:hover {
+    color: #00AEFF;
+}
+.breadcrumbs-item:not(:last-of-type)::after {
+    content: "\203a";
+    margin: 0 5%;
+    color: black;
+}
+.active {
+    font-weight: 700;
+}
+
+#wellcome-sentence {
+    color: var(--Primar-frg, #543A14);
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 2.25em;
+    font-style: normal;
+    font-weight: 600; 
+    margin: 2% 10%; 
+    align-self: flex-start;
+}
+
+.under-header {
+    color: #000;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 2.25em;
+    font-style: normal;
+    font-weight: 600;
+    max-width: 60ch;
+    margin-bottom: 0;
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 60ch;
+    overflow-wrap: break-word;
+}
+
+.side-description {
+    color: #000;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 1.8em;
+    font-style: normal;
+    font-weight: 400; 
+    align-self: flex-start;  
+    max-width: 60ch;
+    margin: 0.5% 10%;
+    overflow-wrap: break-word;
+}
+.side-description > a {
+    color: #000;
+}
+.side-description > a:hover {
+    color: #00AEFF;
+    text-decoration: underline;
+}
+
+/* Information-sida */
+ol {
+    color: #000;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 1.8em;
+    font-style: normal;
+    font-weight: 400;
+    align-self: center;  
+    max-width: 60ch;
+    margin-top: 0.1%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    text-align: center;
+    padding: 20px 30px;
+}
+
+#info-link {
+    color: #000;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: 600;
+}
+#info-link:hover {
+    color: #00AEFF;
+    text-decoration: underline;
+}
+
+/* Extra bild */
+.extra-image {
+    width: 80%;
+}
+
+/* Knapper i Tjänster-sida */
+.btn {
+    background-color: #F0BB78;
+    border-radius: 0.6em;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.4em;
+    padding: 1% 2%;
+    margin: 1% 0;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #00AEFF;
+    color: #FFF;
+}
+
+/* Kontaktformulär */
+#contact-form {
+    font-size: 1.4em;
+    border: 1px solid black; 
+}
+#contact-form > legend {
+    font-size: 1.4em;
+}
+#contact-form > form > label {
+    font-size: 1.3em;
+}
+#contact-form > form > input, textarea {
+    margin: 2% 0;
+    font-size: 1.3em;
+    border: 1px solid black;
+    max-width: 60vw;
+}
+#contact-form > form > label > a {
+    color: #000;
+    text-decoration: underline;
+}
+#contact-form > form > label > a:hover {
+    color: #00AEFF;
+    
+}
+.btns {
+    background-color: #F0BB78;
+    border-radius: 0.6em;
+    border: 1px solid #000;
+    padding: 1%;
+    font-size: 1em;
+}
+
+/* Inloggning-sida */
+.inloging-label {
+    margin-bottom: 0.5%;
+    font-size: 1.5em;
+}
+.input {
+    border-radius: 0.6em;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.3em;
+    padding: 2%;
+    margin: 1% 2%;    
+}
+
+/* Användarsida */
+#trip-list {
+    list-style-type: none;
+    align-self: flex-start;
+    margin: 0 10%;
+    padding: 0;
+    font-size: 1.4em;
+}
+
+/* Nybokningssida */
+#travel-alternative {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 1.4em;
+    margin-bottom: 1%;
+}
+#one-way-label {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+    justify-self: start;
+}
+#one-way-trip {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: end;
+    transform: scale(1.5);
+}
+#round-label {
+    grid-row: 1;
+    grid-column: 3;
+    align-self: start;
+    justify-self: end;
+}
+#round-trip {
+    grid-row: 2;
+    grid-column: 3;
+    align-self: end;
+    transform: scale(1.5);
+}
+
+/* Enkelresa ruta */
+#booking-input-oneway {
+    background-color: #543A14;
+    color: #FFF;
+    width: 50%;
+    display: none;
+    font-size: 1.4em;
+}
+#booking-input-oneway > form > input {
+    font-size: 1em;
+}
+#booking-input-oneway > form > label > input {
+    font-size: 1em;
+}
+#booking-input-oneway > form > h4 {
+    margin-bottom: 0.1%;
+}
+
+/* Tur och retur-ruta */
+#booking-input-round {
+    background-color: #543A14;
+    color: #FFF;
+    width: 50%;
+    display: none;
+    font-size: 1.4em;
+}
+#booking-input-round > form > input {
+    font-size: 1em;
+}
+#booking-input-round > form > label > input {
+    font-size: 1em;
+}
+#booking-input-round > form > h4 {
+    margin-bottom: 0.1%;
+}
+
+.every {
+    margin-left: 1%;
+}
+
+/* Bekräftelse ruta */
+#confirmationBox {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; 
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #543A14;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#footer-rubrik {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: center;
+    align-self: start;
+    margin-top: 3%;
+}
+.socialmedia-icons {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: end;
+    margin-bottom: 3%;
+}
+.icon {
+    width: 15%;
+    height: auto;
+    max-width: 90%;
+}
+
+.contact {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5625em;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    grid-row: 1;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;   
+    justify-self: start;
+    align-self: start;
+    list-style-type: none; 
+    white-space: nowrap;
+    padding: 0;
+}
+.contact > li {
+    margin-top: 1%;
+}
+.contact > li > svg {
+    padding-right: 3%;
+}
+
+/* Stilsättning för skärmar mindre än 1200px */
+@media only screen and (max-width: 1200px) {
+    
+    /* Ändra linje-storlek */
+    #logo {font-size: 1.6em;}
+    
+    #side-header {font-size: 1.6em;}
+    
+    #wellcome-sentence {font-size: 1.5em;}
+    
+    .side-description, ol, table {font-size: 1.3em;} 
+    
+    #contact-form {font-size: 1.2em;}
+    
+    #info-link {font-size: 1.2em; }
+    
+    .btn {font-size: 1.3em;}
+    
+    .under-header {
+        font-size: 1.5em;
+        max-width: 20ch;
+    }
+    .side-description {
+        overflow-wrap: break-word;
+        max-width: 30ch;
+    }
+    /* Navigeringsmeny i mobilläge */
+    #nav-menu{
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #543A14;
+        width: 75%;
+        margin: 0;
+    }
+    .nav-list{
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+        margin: 0 auto;
+        padding: 5% 0;
+        height: 100%;
+        background-color: #543A14;
+    }
+    .nav-list > li {
+        padding: 0.8em 0;
+        width: 100%;
+    }
+    /* Öppen knapp */
+    .open {
+        display: block;
+        position: absolute;
+        right: 1%;
+        top: 1%;
+        padding: 0;
+    }
+    .menu-btn {
+        justify-self: flex-end;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        padding: 1%;
+        background-color: #F0BB78;
+        border: white solid 1px;
+        cursor: pointer;
+    }
+    .bars {
+        display: block;
+        width: 20px;
+        height: 3px;
+        background-color: #543A14;
+        margin: 5px 0;
+    }
+    .menu-btn:hover {
+        background-color: #00AEFF;
+    }
+    .menu-text {
+        color: #543A14;
+        margin: 1%;
+        font-weight: 700;
+    }
+    /* Stängknapp */
+    .close {
+        margin: 1em 1.5em;
+        right: 2%;
+        top: 2%;
+    }
+    .cross1 {
+        width: 25px;
+        transform: rotate(45deg);
+        position: relative;
+        top: 5px;
+    }
+    .cross2 {
+        width: 25px;
+        transform: rotate(135deg);
+        position: relative;
+        top: -3px;
+    }
+
+    /* Resa-alternative */
+    #travel-alternative {
+        grid-template-columns: 1fr 1fr;
+    }
+    #one-way-label {
+        align-self: center;
+    }
+    #round-label {
+        align-self: center;
+        grid-column: 2;
+    }
+    #round-trip {
+        grid-column: 2;
+    }
+
+    /* Sidfot */
+    footer {
+        grid-template-columns: 1fr;
+    }
+    #footer-rubrik {
+        grid-row: 1;
+        grid-column: 1; 
+        font-size: 1.2em;
+        align-self: center;
+        margin-bottom: 1%;
+    }
+    .socialmedia-icons {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    .contact {
+        font-size: 1.1em;
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: center;
+        margin-top: 1%;
+    }
+    
+}

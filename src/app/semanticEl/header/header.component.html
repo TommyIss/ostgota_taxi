@@ -1,0 +1,34 @@
+<!-- Header -->
+    <header>
+        <!-- Logo -->
+        <h1 id="logo"><a routerLink="/home">Östgöta Färdtjänst</a></h1>
+        <!-- Menyknapp för att öppna navigeringsmeny i mobil läge  -->
+        <button class="menu-btn open" id="open-menu" (click)="menuToggle()">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <!-- Navigeringsmeny -->
+        <nav id="nav-menu" [style.display]="menuDisplay">
+            <!-- Knapp som visas när mobilmenyn är utfälld -->
+            <button class="menu-btn close" id="close-menu" (click)="menuToggle()">
+                <span class="meny-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng</span>
+            </button> 
+            <ul class="nav-list">
+                <li><a routerLink="/home" routerLinkActive="actual-side">Startsida</a></li>
+                <li><a routerLink="/services" routerLinkActive="actual-side">Tjänster</a></li>
+                <li><a routerLink="/contact" routerLinkActive="actual-side">Kontakt</a></li>
+                <li><a routerLink="/about" routerLinkActive="actual-side">Om oss</a></li>
+                <li><a routerLink="/info" routerLinkActive="actual-side">Om Färdtjänst</a></li>
+                <li><a routerLink="/accessibility" routerLinkActive="actual-side">Tillgänglighetsredogörelse</a>
+                </li>
+            </ul>
+        </nav>
+    </header>

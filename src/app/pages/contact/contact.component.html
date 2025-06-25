@@ -1,0 +1,55 @@
+<!-- Main -->
+    <main>
+        <!-- Huvudbilden -->
+        <div>
+            <img src="images/main-image.jpg" alt="Huvudbilden som innehåller en gul taxi och byggnader i bakgrunden" id="main-image">
+        </div>
+        
+        <!-- Bread crumbs -->
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs-item"><a routerLink="/home">Startsida</a></li>
+            <li class="breadcrumbs-item active">Kontakt</li>
+        </ul>
+
+        <!-- Sidansrubrik -->
+        <h2 id="side-header">Kontakt</h2>
+
+        <!-- Sidansbeskrivning -->
+        <p class="side-description">
+            Kontakta gärna oss via telefonnummer: 011-xxxxxx, våra telefontider mellan 08-17 måndag till fredag.
+            <br>
+            Eller skicka gärna ett mejl:  <a href="mailto:kundservice@ostgotafardtjanst.se">kundservice&#64;ostgotafardtjanst.se</a>
+        </p>
+        <p class="side-description">
+            Vi är på Östgöta Färdtjänst, uppskattar din feedback samt åsikt, vilket hjälper oss att förbättra vår tjänster.
+            <br>
+            <br>
+            Tveka inte att kontakta oss om du har frågor eller kommentarer.
+            <br>
+            <br>
+            Fyll i formuläret nedan så återkommer vi så snart som möjligt.
+        </p>
+
+        <!-- Kontaktformulär -->
+        <Fieldset id="contact-form" class="side-description">
+            <legend>Kontaktformulär:</legend>
+            <form action="https://studenter.miun.se/~tois2401/dt068g/moment32/contact.html" autocomplete="on">
+                <label for="Namn">Namn:</label>
+                <input type="text" name="Namn" id="Namn" size="15" maxlength="30">
+                <br>
+                <label for="E-post">E-post:</label>
+                <input type="text" name="E-post" id="E-post" size="15" maxlength="40">
+                <br>
+                <label for="Meddelande">Meddelande:</label>
+                <br>
+                <textarea name="Meddelande" id="Meddelande" cols="50" rows="6"></textarea>
+                <br>
+                <input type="checkbox" id="confirm-check" name="confirm-check" value="confirm-check">
+                <label for="confirm-check">Har läst och godkänt <a href="Hanteringsvillkor.pdf" target="_blank">hanteringspolicy</a> av personuppgifter enligt GDPR.</label>
+                <br>
+                <input class="btns" type="submit" name="Skicka" value="Skicka" id="submit-btn">
+                <button class="btn" type="reset" value="Rensa" id="reset-btn">Rensa</button>
+            </form>
+        </Fieldset>
+        
+    </main>
