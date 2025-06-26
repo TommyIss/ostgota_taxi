@@ -33,22 +33,43 @@
         <!-- Kontaktformulär -->
         <Fieldset id="contact-form" class="side-description">
             <legend>Kontaktformulär:</legend>
-            <form action="https://studenter.miun.se/~tois2401/dt068g/moment32/contact.html" autocomplete="on">
-                <label for="Namn">Namn:</label>
-                <input type="text" name="Namn" id="Namn" size="15" maxlength="30">
+            <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+
+                <label for="name">Namn:</label>
+                <input type="text" name="name" [(ngModel)]="formData.name" size="15" maxlength="30" required />
+
+                @if(error.nameError !== '') {
+                    <span style="color: red;">
+                        {{ error.nameError }}
+                    </span>
+                }
                 <br>
-                <label for="E-post">E-post:</label>
-                <input type="text" name="E-post" id="E-post" size="15" maxlength="40">
+                <label for="email">E-post:</label>
+                <input type="text" name="email" [(ngModel)]="formData.email" size="15" maxlength="40" required />
+
+                @if(error.emailError !== '') {
+                    <span style="color: red;">
+                        {{ error.emailError }}
+                    </span>
+                }
                 <br>
-                <label for="Meddelande">Meddelande:</label>
+                <label for="message">Meddelande:</label>
+                @if(error.messageError !== '') {
+                    <span style="color: red;">
+                        {{ error.messageError }}
+                    </span>
+                }
                 <br>
-                <textarea name="Meddelande" id="Meddelande" cols="50" rows="6"></textarea>
+                <textarea name="message" [(ngModel)]="formData.message" cols="50" rows="6" required></textarea>
                 <br>
-                <input type="checkbox" id="confirm-check" name="confirm-check" value="confirm-check">
+                <input type="checkbox" id="confirm-check" [(ngModel)]="consentGiven" name="consent" required />
                 <label for="confirm-check">Har läst och godkänt <a href="Hanteringsvillkor.pdf" target="_blank">hanteringspolicy</a> av personuppgifter enligt GDPR.</label>
+
                 <br>
-                <input class="btns" type="submit" name="Skicka" value="Skicka" id="submit-btn">
+
+                <input class="btns" type="submit" name="Skicka" value="Skicka" [disabled]="!consentGiven">
                 <button class="btn" type="reset" value="Rensa" id="reset-btn">Rensa</button>
+
             </form>
         </Fieldset>
         

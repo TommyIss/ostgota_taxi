@@ -230,6 +230,7 @@ th, td {
     padding: 1% 2%;
     margin: 1% 0;
     cursor: pointer;
+    margin-left: 2%;
 }
 .btn:hover {
     background-color: #00AEFF;
@@ -267,6 +268,12 @@ th, td {
     border: 1px solid #000;
     padding: 1%;
     font-size: 1em;
+    cursor: pointer;
+    
+}
+.btns:hover {
+    background-color: #00AEFF;
+    color: #FFF;
 }
 
 /* Inloggning-sida */
