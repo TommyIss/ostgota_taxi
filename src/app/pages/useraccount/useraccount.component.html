@@ -1,0 +1,39 @@
+<!-- Main -->
+    <main>
+        <!-- Huvudbilden -->
+        <div>
+            <img src="images/main-image.jpg" alt="Huvudbilden som innehåller en gul taxi och byggnader i bakgrunden" id="main-image">
+        </div>
+        
+        <!-- Bread crumbs -->
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs-item"><a routerLink="/home">Startsida</a></li>
+            <li class="breadcrumbs-item"><a routerLink="/services">Tjänster</a></li>
+            <li class="breadcrumbs-item"><a routerLink="/inloging" style="white-space: nowrap;">Logga in</a></li>
+            <li class="breadcrumbs-item active">Användarsida</li>
+        </ul>
+
+        <!-- Sidansrubrik -->
+        <h2 id="side-header">Användarsida</h2>
+
+        <!-- Sidansbeskrivning -->
+        
+        <p class="side-description">
+            I din anävndersida kan du, boka en ny resa, och hantera dina inbokade resor.
+        </p>
+        <p class="side-description">
+            Klicka på knappen för att boka en ny resa:
+        </p>
+        <a routerLink="/newbooking" class="btn">Boka ny resa</a>
+        <p class="side-description">
+            <strong>Markera/avmarkera dina förbokade resor:</strong>
+        </p>
+        <ul id="trip-list" class="side-description">
+        </ul>
+        
+        <p class="side-description">
+            Klicka på knappen för att avboka de markerade resor:
+        </p>
+        
+        <button class="btn" id="deleteBtn">Avboka markerade</button>
+    </main>
