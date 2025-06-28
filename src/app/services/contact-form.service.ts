@@ -6,7 +6,7 @@ import { ContactData } from '../modules/contact-data';
   providedIn: 'root'
 })
 export class ContactFormService {
-  url: string = 'http://localhost:3000/contact';
+  url: string = 'https://ostgotataxi-webservice.onrender.com/contact';
   constructor(private http: HttpClient) { }
 
   sendForm(contactData: ContactData) {
