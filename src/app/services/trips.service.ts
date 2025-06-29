@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OnewayTrip } from '../modules/oneway-trip';
 import { RoundTrip } from '../modules/round-trip';
+import { GetOnewayTrip } from '../modules/get-oneway-trip';
+import { GetRoundTrip } from '../modules/get-round-trip';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +15,12 @@ export class TripsService {
   constructor(private http: HttpClient) { }
 
   // Metoder för enkelresor
-  getOnewayTrips(): Observable<OnewayTrip[]>{
-    return this.http.get<OnewayTrip[]>(this.url + 'oneway_trip');
+  getOnewayTrips(): Observable<GetOnewayTrip[]>{
+    return this.http.get<GetOnewayTrip[]>(this.url + 'oneway_trip');
   }
 
-  getChosenOnewayTrip(id: number): Observable<OnewayTrip>{
-    return this.http.get<OnewayTrip>(`${this.url}oneway_trip/${id}`);
+  getChosenOnewayTrip(id: number): Observable<GetOnewayTrip>{
+    return this.http.get<GetOnewayTrip>(`${this.url}oneway_trip/${id}`);
   }
 
   postOnewaytrip(newTrip: OnewayTrip): Observable<OnewayTrip> {
@@ -42,12 +44,12 @@ export class TripsService {
   }
 
   // Metoder för tur och retur-resor
-  getRoundTrips(): Observable<RoundTrip[]>{
-    return this.http.get<RoundTrip[]>(this.url + 'round_trip');
+  getRoundTrips(): Observable<GetRoundTrip[]>{
+    return this.http.get<GetRoundTrip[]>(this.url + 'round_trip');
   }
 
-  getChosenRoundTrip(id: number): Observable<RoundTrip>{
-    return this.http.get<RoundTrip>(`${this.url}round_trip/${id}`);
+  getChosenRoundTrip(id: number): Observable<GetRoundTrip>{
+    return this.http.get<GetRoundTrip>(`${this.url}round_trip/${id}`);
   }
 
   postRoundtrip(newTrip: RoundTrip): Observable<RoundTrip> {

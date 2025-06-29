@@ -1,0 +1,10 @@
+
+li {
+    padding: 0 1%;
+}
+.trip-list {
+    padding: 2% 4%;
+    border: 1px solid black;
+    margin: 1% auto;
+    line-height: 1.5em;
+}
