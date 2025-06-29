@@ -43,7 +43,7 @@ export class UseraccountComponent {
       next: () => {
         console.log(`Resan med bokningsnummer: ${id} har raderats`);
         alert('Din booking har raderats!');
-        this.ngOnInit();
+        window.location.reload();
       },
       error: err => console.error('Fel vid anslutning: ', err)
     });
@@ -59,7 +59,7 @@ export class UseraccountComponent {
       next: () => {
         console.log(`Resan med bokningsnummer: ${id} har raderats`);
         alert('Din booking har raderats!');
-        this.ngOnInit();
+        window.location.reload();
       },
       error: err => console.error('Fel vid anslutning: ', err)
     });
