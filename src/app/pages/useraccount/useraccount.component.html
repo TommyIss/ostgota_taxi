@@ -32,32 +32,42 @@
         <h2 class="side-description">
             <strong>Enkel resor</strong>
         </h2>
-        <ul class="side-description" *ngFor="let trip of onewayTrips">
-            <li class="trip-list">
-                Bokningsnummer: {{trip.id}}
-                <br>{{trip.firstname}} {{trip.lastname}} 
-                <br> Från: {{trip.from}} - Till: {{trip.to}} 
-                <br>Datum: {{trip.date.split('T')[0]}} - Tid: {{trip.time.slice(0, 5)}} 
-                <br>Tilläggstjänster: {{trip.extra_services}} 
-                <br>Återkommanderesa: {{trip.recurring}}
-                <br><button class="btns" (click)="updateOnewayTrip(trip.id)">Omboka resa</button> - <button class="btns" (click)="deleteOnewayTrip(trip.id)">Avboka resa</button> 
-            </li>
-        </ul>
+        @if(onewayTrips.length !== 0) {
+            <ul class="side-description" *ngFor="let trip of onewayTrips">
+                <li class="trip-list">
+                    Bokningsnummer: {{trip.id}}
+                    <br>{{trip.firstname}} {{trip.lastname}} 
+                    <br> Från: {{trip.from}} - Till: {{trip.to}} 
+                    <br>Datum: {{trip.date.split('T')[0]}} - Tid: {{trip.time.slice(0, 5)}} 
+                    <br>Tilläggstjänster: {{trip.extra_services}} 
+                    <br>Återkommanderesa: {{trip.recurring}}
+                    <br><button class="btns" (click)="updateOnewayTrip(trip.id)">Omboka resa</button> - <button class="btns" (click)="deleteOnewayTrip(trip.id)">Avboka resa</button> 
+                </li>
+            </ul>
+        } @else {
+            <p class="side-description">Det finns inga inbokade resor</p>
+        }
+        
 
         <h2 class="side-description">
             <strong>Tur och retur</strong>
         </h2>
-        <ul class="side-description" *ngFor="let trip of roundTrips">
-            <li class="trip-list">
-                Bokningsnummer: {{trip.id}}
-                <br>{{trip.firstname}} {{trip.lastname}} 
-                <br>Från: {{trip.from}} - Till: {{trip.to}} 
-                <br>Datum: {{trip.date.split('T')[0]}} - Tid: {{trip.time.slice(0, 5)}}
-                <br>Returresa:
-                <br>Datum: {{trip.return_date.split('T')[0]}} - Tid: {{trip.return_time.slice(0, 5)}} 
-                <br>Tillägstjänster: {{trip.extra_services}}  <br>Återkommanderesa: {{trip.recurring}}
-                <br><button class="btns" (click)="updateRoundTrip(trip.id)">Omboka resa</button> - <button class="btns" (click)="deleteRoundTrip(trip.id)">Avboka resa</button> 
-            </li>
-        </ul>
+        @if(roundTrips.length !== 0) {
+            <ul class="side-description" *ngFor="let trip of roundTrips">
+                <li class="trip-list">
+                    Bokningsnummer: {{trip.id}}
+                    <br>{{trip.firstname}} {{trip.lastname}} 
+                    <br>Från: {{trip.from}} - Till: {{trip.to}} 
+                    <br>Datum: {{trip.date.split('T')[0]}} - Tid: {{trip.time.slice(0, 5)}}
+                    <br>Returresa:
+                    <br>Datum: {{trip.return_date.split('T')[0]}} - Tid: {{trip.return_time.slice(0, 5)}} 
+                    <br>Tillägstjänster: {{trip.extra_services}}  <br>Återkommanderesa: {{trip.recurring}}
+                    <br><button class="btns" (click)="updateRoundTrip(trip.id)">Omboka resa</button> - <button class="btns" (click)="deleteRoundTrip(trip.id)">Avboka resa</button> 
+                </li>
+            </ul>
+        } @else {
+            <p class="side-description">Det finns inga inbokade resor</p>
+        }
+        
         
     </main>
