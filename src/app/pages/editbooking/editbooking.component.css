@@ -5,3 +5,10 @@ span {
 li {
     padding: 0 1%;
 }
+
+fieldset {
+    border: 1px solid black;
+    background-color: #543A14;
+    color: white;
+    width: 40%;
+}
