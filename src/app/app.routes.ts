@@ -9,6 +9,7 @@ import { InlogingComponent } from './pages/inloging/inloging.component';
 import { UseraccountComponent } from './pages/useraccount/useraccount.component';
 import { NewbookingComponent } from './pages/newbooking/newbooking.component';
 import { EditbookingComponent } from './pages/editbooking/editbooking.component';
+import { EditroundtripComponent } from './pages/editroundtrip/editroundtrip.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path: 'inloging', component: InlogingComponent},
     {path: 'useraccount', component: UseraccountComponent},
     {path: 'newbooking', component: NewbookingComponent},
-    {path: 'editbooking/:id', component: EditbookingComponent}
+    {path: 'editbooking/:id', component: EditbookingComponent}, 
+    {path: 'editroundtrip/:id', component: EditroundtripComponent}
 ];

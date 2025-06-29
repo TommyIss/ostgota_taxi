@@ -20,12 +20,16 @@ export class UseraccountComponent {
   ngOnInit() {
     this.tripsService.getOnewayTrips().subscribe((onewayTrips) => {
       this.onewayTrips = onewayTrips;
-      
+      onewayTrips.sort((a, b) => 
+        (a.id > b.id) ? 1: -1
+      );
     });
     
     this.tripsService.getRoundTrips().subscribe((roundTrips) => {
       this.roundTrips = roundTrips;
-      console.log(roundTrips);
+      roundTrips.sort((a, b) => 
+        (a.id > b.id) ? 1: -1
+      );
     });
   }
 
@@ -47,7 +51,7 @@ export class UseraccountComponent {
 
   // Metoder för tur och retur
   updateRoundTrip(id: number) {
-    this.router.navigate([`editbooking/${id}`]);
+    this.router.navigate([`editroundtrip/${id}`]);
   }
 
   deleteRoundTrip(id: number) {

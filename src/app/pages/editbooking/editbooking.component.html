@@ -11,111 +11,77 @@
             <li class="breadcrumbs-item"><a routerLink="/services">Tjänster</a></li>
             <li class="breadcrumbs-item"><a routerLink="/inloging" style="white-space: nowrap;">Logga in</a></li>
             <li class="breadcrumbs-item"><a routerLink="/useraccount">Användarsida</a></li>
-            <li class="breadcrumbs-item active">Ny bokning</li>
+            <li class="breadcrumbs-item active">Ändra bokning</li>
         </ul>
 
         <!-- Sidansrubrik -->
-        <h2 id="side-header">Ändra bokningen</h2>
+        <h2 id="side-header">Ändra bokning</h2>
 
         <!-- Sidansbeskrivning -->
         <p class="side-description">
-            I denna sida kan du ändra din befintliga bokning
+            I denna sida kan du enkelt omboka din resa, och fylla nya uppgifter i informationsruta
         </p>
 
-        <!-- Resa-alternative -->
-        <div id="travel-alternative">
-            <label for="one-way-trip" id="one-way-label">Enkel resa</label>
-            <input type="radio" id="one-way-trip"
-            name="trip-choice">
-            <label for="round-trip" id="round-label">Tur och retur</label>
-            <input type="radio" id="round-trip" name="trip-choice">
-        </div>
 
         <!-- Input för enkelresa -->
-        <fieldset id="booking-input-oneway">
+        <fieldset>
             <form>
+                <label for="firstname">Förnamn:</label>
+                <input type="text" id="firstname" [(ngModel)]="currentTrip.firstname" name="firstname">
+                
+                
+                <br>
+                
+                <label for="lastname">Efternamn:</label>
+                <input type="text" id="lastname" [(ngModel)]="currentTrip.lastname" name="lastname">
+
+                <br>
+
+                <label for="email">E-post:</label>
+                <input type="text" id="email" [(ngModel)]="currentTrip.email" name="email">
+
+                <br>
+
                 <label for="from">Från:</label>
-                <input type="text" name="from" id="from"><span id="from-error"></span>
+                <input type="text" [(ngModel)]="currentTrip.from" name="from">
+
                 <br>
+
                 <label for="to">Till:</label>
-                <input type="text" name="to" id="to">
+                <input type="text" [(ngModel)]="currentTrip.to" name="to">
+
                 <br>
+
                 <label for="date">Datum:</label>
-                <input type="date" name="date" id="date">
+                <input type="date" [(ngModel)]="currentTrip.date" name="date">
+
                 <br>
+
                 <label for="time">Tid:</label>
-                <input type="time" name="time" id="time">
+                <input type="time" [(ngModel)]="currentTrip.time" name="time">
+
                 <br>
+
                 <strong>Tilläggstjänster:</strong>
+
                 <br>
-                <input type="checkbox" name="rullstol" id="rullstol" value="Rullstol">
-                <label for="rullstol">Rullstol</label>
-                <input type="checkbox" name="ledsagare" id="ledsagare" value="Ledsagare">
-                <label for="ledsagare">Ledsagare</label>
-                <br>
-                <input type="checkbox" name="extra-bagage" id="extra-bagage" value="Extra-bagage">
-                <label for="extra-bagage">Extra bagage</label>
-                <input type="checkbox" name="medresenar" id="medresenar" value="Medresenär">
-                <label for="medresenar">Medresenär</label>
+
+                <textarea name="extraServices" id="extraServices" placeholder="Här skrivs du om du behöver extra tjänster så såsom rollstol, ledsagare annars skrivs Nej!" [(ngModel)]="currentTrip.extra_services"></textarea>
+
                 <br>
                 <strong>Återkommande resa:</strong>
                 <br>
-                <input type="radio" name="yes/no" id="yes">
-                <label for="yes">Ja, </label><label for="every">varje</label><input type="text" size="5" maxlength="20" id="every" class="every">
+                <input type="radio" name="yes/no" id="yes" [(ngModel)]="isRecurring" [value]="true">
+                <label for="yes">Ja, </label><label for="every">varje</label><input type="text" size="5" maxlength="20" [(ngModel)]="every" class="every" name="every">
                 <br>
-                <input type="radio" name="yes/no" id="no">
+                <input type="radio" name="yes/no" id="no" [(ngModel)]="isRecurring" [value]="false">
                 <label for="no">Nej</label>
                 <br>
-                <button class="btn" id="booking-btn-one">Boka</button>
+                <button class="btn" (click)="updateTrip()">Boka</button>
+                @if(error !== '') {
+                    <span style="color: red;">{{ error }}</span>
+                }
             </form>
         </fieldset>
 
-        <!-- Input för tur och retur -->
-        <fieldset id="booking-input-round">
-            <form>
-                <label for="from-round">Från:</label>
-                <input type="text" name="from-round" id="from-round">
-                <br>
-                <label for="to-round">Till:</label>
-                <input type="text" name="to-round" id="to-round">
-                <br>
-                <label for="date-first">Datum:</label>
-                <input type="date" name="date-first" id="date-first">
-                <br>
-                <label for="time-first">Tid:</label>
-                <input type="time" name="time-first" id="time-first">
-                <br>
-                <strong>Tilläggstjänster:</strong>
-                <br>
-                <input type="checkbox" name="rullstol-round" id="rullstol-round" value="Rullstol">
-                <label for="rullstol-round">Rullstol</label>
-                <input type="checkbox" name="ledsagare-round" id="ledsagare-round" value="Ledsagare">
-                <label for="ledsagare-round">Ledsagare</label>
-                <br>
-                <input type="checkbox" name="extra-bagage-round" id="extra-bagage-round" value="Extra bagage">
-                <label for="extra-bagage-round">Extra bagage</label>
-                <input type="checkbox" name="medresenar-round" id="medresenar-round" value="Medresenär">
-                <label for="medresenar-round">Medresenär</label>
-                <br>
-                <strong>Retur resa:</strong>
-                <br>
-                <label for="date-round">Datum:</label>
-                <input type="date" name="date-round" id="date-round">
-                <br>
-                <label for="time-round">Tid:</label>
-                <input type="time" name="time-round" id="time-round">
-                <br>
-                <strong>Återkommande resa:</strong>
-                <br>
-                <input type="radio" name="yes/no" id="yes-round">
-                <label for="yes-round">Ja, </label><label for="every-round">varje</label><input type="text" size="5" maxlength="20" id="every-round" class="every">
-                <br>
-                <input type="radio" name="yes/no" id="no-round">
-                <label for="no-round">Nej</label>
-                <br>
-                <button class="btn" id="booking-btn-round">Boka</button>
-            </form>
-        </fieldset>
-         <!-- Bekräftelse ruta -->
-        <div id="confirmationBox">Resa tillagd!</div>
     </main>

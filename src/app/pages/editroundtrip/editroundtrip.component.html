@@ -1,0 +1,93 @@
+ <!-- Main -->
+    <main>
+        <!-- Huvudbilden -->
+        <div>
+            <img src="images/main-image.jpg" alt="Huvudbilden som innehåller en gul taxi och byggnader i bakgrunden" id="main-image">
+        </div>
+        
+       <!-- Bread crumbs -->
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs-item"><a routerLink="/home">Startsida</a></li>
+            <li class="breadcrumbs-item"><a routerLink="/services">Tjänster</a></li>
+            <li class="breadcrumbs-item"><a routerLink="/inloging" style="white-space: nowrap;">Logga in</a></li>
+            <li class="breadcrumbs-item"><a routerLink="/useraccount">Användarsida</a></li>
+            <li class="breadcrumbs-item active">Ändra bokning</li>
+        </ul>
+
+        <!-- Sidansrubrik -->
+        <h2 id="side-header">Ändra bokningen</h2>
+
+        <!-- Sidansbeskrivning -->
+        <p class="side-description">
+            I denna sida kan du enkelt omboka din resa, och fylla nya uppgifter i informationsruta
+        </p>
+
+        <!-- Input för tur och retur -->
+        <fieldset>
+            <form>
+                <label for="firstnameRound">Förnamn:</label>
+                <input type="text" name="firstnameRound" [(ngModel)]="currentTrip.firstname">
+
+                <br>
+
+                <label for="lastnameRound">Efternamn:</label>
+                <input type="text" name="lastnameRound" [(ngModel)]="currentTrip.lastname">
+
+                <br>
+
+                <label for="emailRound">E-post:</label>
+                <input type="text" name="emailRound" [(ngModel)]="currentTrip.email">
+
+                <br>
+
+                <label for="fromRound">Från:</label>
+                <input type="text" name="fromRound" [(ngModel)]="currentTrip.from">
+
+                <br>
+
+                <label for="toRound">Till:</label>
+                <input type="text" name="toRound" [(ngModel)]="currentTrip.to">
+
+                <br>
+
+                <label for="dateDepart">Datum:</label>
+                <input type="date" name="dateDepart" [(ngModel)]="currentTrip.date">
+                <br>
+                <label for="timeDepart">Tid:</label>
+                <input type="time" name="timeDepart" [(ngModel)]="currentTrip.time">
+
+                <br>
+
+                <strong>Tilläggstjänster:</strong>
+
+                <br>
+
+                <textarea placeholder="Här skrivs du om du behöver extra tjänster så såsom rollstol, ledsagare annars skrivs Nej!" [(ngModel)]="currentTrip.extra_services" name="extraServicesRound"></textarea>
+
+                <br>
+                <strong>Retur resa:</strong>
+                <br>
+
+                <label for="dateReturn">Datum:</label>
+                <input type="date" [(ngModel)]="currentTrip.return_date" name="dateReturn">
+                <br>
+                <label for="timeReturn">Tid:</label>
+                <input type="time" [(ngModel)]="currentTrip.return_time" name="timeReturn">
+                <br>
+                <strong>Återkommande resa:</strong>
+                <br>
+
+                <input type="radio" name="yes/no" id="yes-round" [(ngModel)]="isRecurring" [value]="true">
+                <label for="yes-round">Ja, </label><label for="everyRound">varje</label><input type="text" size="5" maxlength="20" name="everyRound" [(ngModel)]="every" class="every">
+                <br>
+                <input type="radio" name="yes/no" id="no-round" [(ngModel)]="isRecurring" [value]="false">
+                <label for="no-round">Nej</label>
+                <br>
+                <button class="btn" (click)="updateTrip()">Boka</button>
+                @if(error !== '') {
+                    <span style="color: red;">{{ error }}</span>
+                }
+            </form>
+        </fieldset>
+
+    </main>
