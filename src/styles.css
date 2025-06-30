@@ -461,22 +461,22 @@ footer {
 @media only screen and (max-width: 1200px) {
     
     /* Ändra linje-storlek */
-    #logo {font-size: 1.6em;}
+    #logo {font-size: 1.5em;}
     
-    #side-header {font-size: 1.6em;}
+    #side-header {font-size: 1.5em;}
     
-    #wellcome-sentence {font-size: 1.5em;}
+    #wellcome-sentence {font-size: 1.4em;}
     
-    .side-description, ol, table {font-size: 1.3em;} 
+    .side-description, ol, table {font-size: 1em;} 
     
-    #contact-form {font-size: 1.2em;}
+    #contact-form {font-size: 1.1em;}
     
-    #info-link {font-size: 1.2em; }
+    #info-link {font-size: 1.1em; }
     
-    .btn {font-size: 1.3em;}
+    .btn {font-size: 1.2em;}
     
     .under-header {
-        font-size: 1.5em;
+        font-size: 1.4em;
         max-width: 20ch;
     }
     .side-description {
@@ -580,7 +580,7 @@ footer {
     #footer-rubrik {
         grid-row: 1;
         grid-column: 1; 
-        font-size: 1.2em;
+        font-size: 1.1em;
         align-self: center;
         margin-bottom: 1%;
     }
@@ -589,7 +589,7 @@ footer {
         grid-column: 1;
     }
     .contact {
-        font-size: 1.1em;
+        font-size: 1em;
         grid-row: 2;
         grid-column: 1;
         justify-self: center;

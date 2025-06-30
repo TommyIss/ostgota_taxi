@@ -34,25 +34,28 @@
         <Fieldset id="contact-form" class="side-description">
             <legend>Kontaktformulär:</legend>
             <form (ngSubmit)="submitForm()" #contactForm="ngForm">
-
-                <label for="name">Namn:</label>
-                <input type="text" name="name" [(ngModel)]="formData.name" size="15" maxlength="30" required />
-
+                <div class="form-group">
+                    <label for="name">Namn:</label>
+                    <input type="text" name="name" [(ngModel)]="formData.name" size="15" maxlength="30" required />
+                </div>
                 @if(error.nameError !== '') {
                     <span style="color: red;">
                         {{ error.nameError }}
                     </span>
                 }
                 <br>
-                <label for="email">E-post:</label>
-                <input type="text" name="email" [(ngModel)]="formData.email" size="15" maxlength="40" required />
-
+                <div class="form-group">
+                    <label for="email">E-post:</label>
+                    <input type="text" name="email" [(ngModel)]="formData.email" size="15" maxlength="40" required />
+                </div>
                 @if(error.emailError !== '') {
                     <span style="color: red;">
                         {{ error.emailError }}
                     </span>
                 }
+                
                 <br>
+
                 <label for="message">Meddelande:</label>
                 @if(error.messageError !== '') {
                     <span style="color: red;">

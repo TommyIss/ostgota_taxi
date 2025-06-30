@@ -38,47 +38,50 @@
         <!-- Input för enkelresa -->
         <fieldset id="booking-input-oneway" [style.display]="showOnewayForm">
             <form>
-                <label for="firstname">Förnamn:</label>
-                <input type="text" id="firstname" [(ngModel)]="firstname" name="firstname">
+                <div class="form-group">
+                    <label for="firstname">Förnamn:</label>
+                    <input type="text" id="firstname" [(ngModel)]="firstname" name="firstname">
+                </div>
                 
-                <span id="firstname-error"></span>
-                
                 <br>
                 
-                <label for="lastname">Efternamn:</label>
-                <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname">
-                
-                <span id="lastname-error"></span>
+                <div class="form-group">
+                    <label for="lastname">Efternamn:</label>
+                    <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname">
+                </div>
 
                 <br>
 
-                <label for="email">E-post:</label>
-                <input type="text" id="email" [(ngModel)]="email" name="email">
-                
-                <span id="email-error"></span>
+                <div class="form-group">
+                    <label for="email">E-post:</label>
+                    <input type="text" id="email" [(ngModel)]="email" name="email">
+                </div>
 
                 <br>
 
-                <label for="from">Från:</label>
-                <input type="text" [(ngModel)]="from" name="from">
-
-                <span id="from-error"></span>
-
-                <br>
-
-                <label for="to">Till:</label>
-                <input type="text" [(ngModel)]="to" name="to">
+                <div class="form-group">
+                    <label for="from">Från:</label>
+                    <input type="text" [(ngModel)]="from" name="from">
+                </div>
 
                 <br>
 
-                <label for="date">Datum:</label>
-                <input type="date" [(ngModel)]="date" name="date">
-
+                <div class="form-group">
+                    <label for="to">Till:</label>
+                    <input type="text" [(ngModel)]="to" name="to">
+                </div>
                 <br>
 
-                <label for="time">Tid:</label>
-                <input type="time" [(ngModel)]="time" name="time">
+                <div class="form-group">
+                    <label for="date">Datum:</label>
+                    <input type="date" [(ngModel)]="date" name="date">
+                </div>
+                <br>
 
+                <div class="form-group">
+                    <label for="time">Tid:</label>
+                    <input type="time" [(ngModel)]="time" name="time">
+                </div>
                 <br>
 
                 <strong>Tilläggstjänster:</strong>
@@ -107,38 +110,48 @@
         <fieldset id="booking-input-round" [style.display]="showRoundForm">
             <form>
 
-                <label for="firstnameRound">Förnamn:</label>
-                <input type="text" name="firstnameRound" [(ngModel)]="firstnameRound">
-                <span id="firstname-error"></span>
+                <div class="form-group">
+                    <label for="firstnameRound">Förnamn:</label>
+                    <input type="text" name="firstnameRound" [(ngModel)]="firstnameRound">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="lastnameRound">Efternamn:</label>
+                    <input type="text" name="lastnameRound" [(ngModel)]="lastnameRound">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="emailRound">E-post:</label>
+                    <input type="text" name="emailRound" [(ngModel)]="emailRound">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="fromRound">Från:</label>
+                    <input type="text" name="fromRound" [(ngModel)]="fromRound">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="toRound">Till:</label>
+                    <input type="text" name="toRound" [(ngModel)]="toRound">
+                </div>
 
                 <br>
 
-                <label for="lastnameRound">Efternamn:</label>
-                <input type="text" name="lastnameRound" [(ngModel)]="lastnameRound"><span id="lastname-error"></span>
-
+                <div class="form-group">
+                    <label for="dateDepart">Datum:</label>
+                    <div class="form-group"></div>
+                    <input type="date" name="dateDepart" [(ngModel)]="dateDepart">
+                </div>
                 <br>
 
-                <label for="emailRound">E-post:</label>
-                <input type="text" name="emailRound" [(ngModel)]="emailRound">
-                <span id="email-error"></span>
-
-                <br>
-
-                <label for="fromRound">Från:</label>
-                <input type="text" name="fromRound" [(ngModel)]="fromRound">
-
-                <br>
-
-                <label for="toRound">Till:</label>
-                <input type="text" name="toRound" [(ngModel)]="toRound">
-
-                <br>
-
-                <label for="dateDepart">Datum:</label>
-                <input type="date" name="dateDepart" [(ngModel)]="dateDepart">
-                <br>
-                <label for="timeDepart">Tid:</label>
-                <input type="time" name="timeDepart" [(ngModel)]="timeDepart">
+                <div class="form-group">
+                    <label for="timeDepart">Tid:</label>
+                    <input type="time" name="timeDepart" [(ngModel)]="timeDepart">
+                </div>
 
                 <br>
 
@@ -152,11 +165,18 @@
                 <strong>Retur resa:</strong>
                 <br>
 
-                <label for="dateReturn">Datum:</label>
-                <input type="date" [(ngModel)]="dateReturn" name="dateReturn">
+                <div class="form-group">
+                    <label for="dateReturn">Datum:</label>
+                    <input type="date" [(ngModel)]="dateReturn" name="dateReturn">
+                </div>
+
                 <br>
-                <label for="timeReturn">Tid:</label>
-                <input type="time" [(ngModel)]="timeReturn" name="timeReturn">
+
+                <div class="form-group">
+                    <label for="timeReturn">Tid:</label>
+                    <input type="time" [(ngModel)]="timeReturn" name="timeReturn">
+                </div>
+                
                 <br>
                 <strong>Återkommande resa:</strong>
                 <br>
